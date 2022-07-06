@@ -1,0 +1,14 @@
+.score-board {
+  display: flex;
+}
+.current-score,
+.current-high-score {
+  display: flex;
+  margin: 5px;
+}
+.current-high-score h3 {
+  margin: 5px;
+}
+.current-score h3 {
+  margin: 5px;
+}

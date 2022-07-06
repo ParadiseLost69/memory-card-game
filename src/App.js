@@ -2,6 +2,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Scoreboard from "./components/Scoreboard";
 import React, { useState } from "react";
+import GameBoard from "./components/GameBoard";
 
 function App() {
   const [score, setScore] = useState(0);
@@ -17,6 +18,7 @@ function App() {
           highScore={highScore}
           setHighScore={setHighScore}
         />
+        <GameBoard />
       </div>
     </div>
   );
