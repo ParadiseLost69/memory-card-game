@@ -18,7 +18,12 @@ function App() {
           highScore={highScore}
           setHighScore={setHighScore}
         />
-        <GameBoard />
+        <GameBoard
+          score={score}
+          setScore={setScore}
+          highScore={highScore}
+          setHighScore={setHighScore}
+        />
       </div>
     </div>
   );
