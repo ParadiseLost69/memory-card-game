@@ -4,6 +4,10 @@ import snoopy from "./images/Snoopy.jpg";
 import sally from "./images/Sally.jpg";
 import woodstock from "./images/Woodstock.jpg";
 import charlieBrown from "./images/CharlieBrown.jpg";
+import lucy from "./images/Lucy.jpg";
+import joeCool from "./images/JoeCool.jpg";
+import olaf from "./images/Olaf.jpg";
+import spike from "./images/Spike.png";
 import "./Gameboard.css";
 
 export default function GameBoard({
@@ -18,6 +22,10 @@ export default function GameBoard({
     { name: "Sally", src: sally, id: 2 },
     { name: "Woodstock", src: woodstock, id: 3 },
     { name: "Charlie B", src: charlieBrown, id: 4 },
+    { name: "Lucy", src: lucy, id: 5 },
+    { name: "Joe C", src: joeCool, id: 6 },
+    { name: "Olaf", src: olaf, id: 7 },
+    { name: "Spike", src: spike, id: 8 },
   ]);
   //Shuffle Function
 
