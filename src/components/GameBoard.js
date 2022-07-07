@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "./Card";
 import snoopy from "./images/Snoopy.jpg";
 import sally from "./images/Sally.jpg";
@@ -12,10 +12,19 @@ export default function GameBoard({
   highScore,
   setHighScore,
 }) {
-  const images = [snoopy, sally, woodstock, charlieBrown];
-  const names = ["Snoopy", "Sally", "Woodstock", "Charlie Brown"];
   const [checkedCards, setCheckedCards] = useState([]);
+  const [objects, setObjects] = useState([
+    { name: "Snoopy", src: snoopy, id: 1 },
+    { name: "Sally", src: sally, id: 2 },
+    { name: "Woodstock", src: woodstock, id: 3 },
+    { name: "Charlie B", src: charlieBrown, id: 4 },
+  ]);
+  //Shuffle Function
 
+  //Shuffle
+  useEffect(() => {
+    setObjects((prev) => prev.sort((a, b) => 0.5 - Math.random()));
+  }, [score]);
   //function to link the card ID to score
   function addScore(e) {
     if (checkedCards.includes(e.target.id)) {
@@ -29,20 +38,25 @@ export default function GameBoard({
       score >= highScore && setHighScore((prevHighScore) => prevHighScore + 1);
     }
   }
-  //creates card container. ID = names of characters
-  const cardContainer = images.map((image, position) => {
+  //creates card container
+  const cardContainer = objects.map((character, position) => {
     return (
       <div
         className="card"
-        key={position}
+        key={character.id}
         onClick={addScore}
-        id={names[position]}
+        id={character.id}
       >
-        <img id={names[position]} src={image}></img>
-        <h4 id={names[position]}>{names[position]}</h4>
+        <img id={character.id} src={character.src}></img>
+        <h4 id={character.id}>{character.name}</h4>
       </div>
     );
   });
 
-  return <div className="card-container">{cardContainer}</div>;
+  ///RENDERED
+  return (
+    <div className="card-container">
+      {cardContainer} <div></div>
+    </div>
+  );
 }
